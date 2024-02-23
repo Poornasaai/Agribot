@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crop_Classifier</title>
+    <link rel="stylesheet" href="static\css\index.css">
+    <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+      <div class="container">
+        <svg viewBox="0 0 960 300">
+          <symbol id="s-text">
+            <text text-anchor="middle" x="50%" y="80%">CLASSIFIER MODEL</text>
+          </symbol>
+          
+          <g class = "g-ants">
+            <use xlink:href="#s-text" class="text-copy"></use>
+            <use xlink:href="#s-text" class="text-copy"></use>
+            <use xlink:href="#s-text" class="text-copy"></use>
+            <use xlink:href="#s-text" class="text-copy"></use>
+            <use xlink:href="#s-text" class="text-copy"></use>
+          </g>
+        </svg>
+      </div>
+      <div class="cont">
+      <div class="opt1">
+      <div class="containerr">
+        <form action='/result' method='POST' enctype='multipart/form-data'>
+    <br>
+		<div class="img-area" data-img="">
+      <label for="choose" class="choose-btn">Choose Image</label>
+      <input type='file' name='input_image' id="choose">
+      <label for="name" class="choose-btn">Field Area Measurement in Acres</label>
+      <input type="name" name="name" placeholder="Enter Acres" required>
+      <label for="name" class="choose-btn">Type</label>
+      <div class="typess">
+        <input type="checkbox" checked="checked">
+        <div class="enatype">Auto</div>
+      </div>
+      <div class="typess">
+        <input type="checkbox" checked="checked">
+        <div class="enatype">Manual</div>
+        </div>
+      <input type='submit' value='Detect' id="predict">
+		</div>
+    <br>
+    <br>
+	</div>
+</form>
+
+</div>
+<div class="opt1">
+<div class="containerr">
+  <div class="img-area" data-img="">
+    <img src="/static/{{img_path}}" alt="sample">
+  </div>
+  <br>
+  <div class="box">
+  <div class="skill-box">
+    <div class="skill-box">
+    </span>
+</div>
+</div>
+</div>
+<div class="result">Given crop image is: <span>{{output}}</span></div>
+</div>
+</div>
+<div class="gallons">
+  The provided input image contains rice which needs 25-30 inches of water in growing stage
+</div>
+</div>
+
+</body>
+<script src="index.js"></script>
+</html>
